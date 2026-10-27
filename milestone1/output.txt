@@ -1,0 +1,44 @@
+========================================================================
+S1 Pick-up with no target   ->   PASS
+------------------------------------------------------------------------
+  [iter   1] ILLEGAL: pick-up attempted where there is no target at (6, 7) by robot(s) [2, 3]
+  [iter   2] ILLEGAL: pick-up attempted where there is no target at (3, 1) by robot(s) [1]
+  robots: 3, iterations: 4, violations: 2, valid captures: 0
+  messages received per robot (zero delay): {1: 6, 2: 6, 3: 6}
+========================================================================
+S2 Single robot pick-up   ->   PASS
+------------------------------------------------------------------------
+  [iter   3] ILLEGAL: exactly one robot attempted to pick up a target at (5, 5) by robot(s) [1]
+  robots: 2, iterations: 5, violations: 1, valid captures: 0
+  messages received per robot (zero delay): {1: 4, 2: 4}
+========================================================================
+S3 Three robots pick-up   ->   PASS
+------------------------------------------------------------------------
+  [iter   2] ILLEGAL: more than two robots attempted to pick up a target at (7, 3) by robot(s) [1, 2, 3]
+  robots: 3, iterations: 4, violations: 1, valid captures: 0
+  messages received per robot (zero delay): {1: 6, 2: 6, 3: 6}
+========================================================================
+S4 Legal pair (control)   ->   PASS
+------------------------------------------------------------------------
+  [iter   4] VALID capture at (3, 4) by robots [1, 2]
+  robots: 2, iterations: 6, violations: 0, valid captures: 1
+  messages received per robot (zero delay): {1: 5, 2: 5}
+========================================================================
+S5 All conditions in one turn   ->   PASS
+------------------------------------------------------------------------
+  [iter   0] ILLEGAL: pick-up attempted where there is no target at (0, 0) by robot(s) [1]
+  [iter   0] ILLEGAL: exactly one robot attempted to pick up a target at (2, 2) by robot(s) [2]
+  [iter   0] ILLEGAL: more than two robots attempted to pick up a target at (5, 5) by robot(s) [3, 4, 5]
+  [iter   0] VALID capture at (8, 8) by robots [6, 7]
+  robots: 7, iterations: 1, violations: 3, valid captures: 1
+  messages received per robot (zero delay): {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0}
+========================================================================
+S6 Random stress test (10 robots, 300 iterations, greedy uncoordinated robots)
+------------------------------------------------------------------------
+  pick-up attempted where there is no target              detector= 144  checker= 144
+  exactly one robot attempted to pick up a target         detector= 122  checker= 122
+  more than two robots attempted to pick up a target      detector=   2  checker=   2
+  valid captures                                          detector=   5  checker=   5
+  -> PASS (detector agrees with independent checker)
+========================================================================
+ALL SCENARIOS PASS
