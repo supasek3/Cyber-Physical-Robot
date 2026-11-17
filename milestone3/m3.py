@@ -11,12 +11,12 @@ def dist(r, target):
 
 # for robots in all state the robot decides for itself
 # if the robot is on the target it checks if there are other robot at the same position
-# if there is then the 2 robots with the smallest id dos the pickup and removes the job
+# if there is then the 2 robots with the smallest id change those robot state to pickup
 
 # For SEARCHING robots
 # if the robot sees a target ahead then move forward to the target
 # elif the robot is on the target sends a "FOUND" message with sender_id and target position and add the target to it's job's list
-    # then create create a wait_until duration before changing the robot to waiting stage
+    # then create a wait_until duration before changing the robot to waiting stage
 # elif the searching robot has a job go to the job with the lowest priority and it changes to GO_TO state
 # else random movement
 
@@ -30,7 +30,7 @@ def dist(r, target):
 # For GO_TO robots
 # if the robot reaches the target with the lowest priority and the target has oready been picked up, go back to searching
 # if the robot steps on to the target and the target is not in the job list. It creates a new job, sends out a find message and waits at the target
-# it checks the job logs and goes to the job with the lowest priorit
+# it checks the job logs and goes to the job with the lowest priority
 # else it becomes a searching robot
 
 # For PICKING UP robots
